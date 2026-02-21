@@ -52,7 +52,6 @@ services:
     ports:
       # Nginx listening internally on port 80 -- mapped to 8080 on host
       - 8080:80
-      - "49152-49160":"49152-49160"
     depends_on:
       - web
 

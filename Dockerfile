@@ -105,4 +105,18 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
 ENV SKIP_REQUIREMENTS_UPDATE=true
 
 
+# Setze Umgebungsvariablen, die Archipelago zwingen, diese Pfade zu nutzen
+ENV ARCHIPELAGO_PDB_PATH=/app/storage/ap.db3
+ENV ARCHIPELAGO_GENERATED_PATH=/app/uploads
+
+# 1. Sicherstellen, dass die Ordner existieren und beschreibbar sind
+RUN mkdir -p /app/storage /app/uploads && chmod -R 777 /app/storage /app/uploads
+
+# 2. Die Datenbank-Struktur initialisieren (Nutzt die Venv)
+RUN . /opt/venv/bin/activate && python WebHost.py --generatordb
+
+# 3. Berechtigungen nach der Erstellung nochmal festigen
+RUN chmod -R 777 /app/storage /app/uploads
+
+
 ENTRYPOINT [ "python", "WebHost.py" ]

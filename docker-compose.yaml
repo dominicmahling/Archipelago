@@ -2,7 +2,8 @@ services:
   multiworld:
     # Build only once. Web service uses the same image build
     build:
-      context: ..
+      context: .
+      dockerfile: Dockerfile
     # Name image for use in web service
     image: archipelago-base
     # Use locally-built image

@@ -3,7 +3,7 @@
 # Source
 FROM scratch AS release
 WORKDIR /release
-ADD https://github.com Enemizer.zip
+ADD https://github.com/Ijwu/Enemizer/releases/latest/download/ubuntu.16.04-x64.zip Enemizer.zip
 
 # Enemizer
 FROM alpine:3.21 AS enemizer
@@ -71,7 +71,7 @@ COPY . .
 COPY --from=cython-builder /build/*.so ./
 
 # --- START: PERSISTENT STORAGE ADDITION ---
-# Erstellt die Ordner für Datenbanken und hochgeladene Dateien
+# Erstellt die Ordner für Datenbanken und generierte Seeds
 RUN mkdir -p /app/storage /app/uploads && chmod -R 777 /app/storage /app/uploads
 VOLUME /app/storage
 VOLUME /app/uploads

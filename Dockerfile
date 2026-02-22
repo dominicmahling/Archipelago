@@ -61,8 +61,6 @@ RUN python -m venv $VIRTUAL_ENV; \
 
 # Copy and install requirements first (better caching)
 COPY WebHostLib/requirements.txt WebHostLib/requirements.txt
-COPY config.yaml /app/config.yaml
-COPY nginx.conf /app/nginx.conf
 
 RUN pip install --no-cache-dir -r \
     WebHostLib/requirements.txt \

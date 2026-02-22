@@ -47,7 +47,6 @@ EnemizerCLI/
 /appimagetool*
 /host.yaml
 /options.yaml
-/config.yaml
 /logs/
 _persistent_storage.yaml
 mystery_result_*.yaml

@@ -104,6 +104,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
 # Ensure no runtime ModuleUpdate.
 ENV SKIP_REQUIREMENTS_UPDATE=true
 
-RUN cp docs/config.yaml config.yaml && chmod 777 config.yaml
 
 ENTRYPOINT [ "python", "WebHost.py" ]

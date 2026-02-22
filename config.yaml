@@ -11,7 +11,6 @@ SELFHOST: true
 # TODO
 SELFLAUNCH: true
 
-ROOM_IDLE_TIMEOUT: 60
 
 # TODO
 #DEBUG: false

@@ -52,7 +52,7 @@ services:
       - ./example_nginx.conf:/etc/nginx/nginx.conf
     ports:
       # Nginx listening internally on port 80 -- mapped to 8080 on host
-      - 8080:80
+      - 7777:80
     depends_on:
       - web
 

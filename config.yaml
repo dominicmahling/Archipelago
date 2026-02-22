@@ -16,7 +16,7 @@ SELFLAUNCH: true
 #DEBUG: false
 
 # Web hosting port
-PORT: 80
+PORT: 3000
 
 # Place where uploads go.
 UPLOAD_FOLDER: "/app/uploads"

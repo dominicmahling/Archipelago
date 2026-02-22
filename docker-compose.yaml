@@ -16,7 +16,7 @@ services:
 
       # Mount configs
       - ./config.yaml:/app/config.yaml
-      - ./elflaunch.yaml:/app/selflaunch.yaml
+      - ./selflaunch.yaml:/app/selflaunch.yaml
 
     # Expose on host network for access to dynamically mapped ports
     network_mode: host

@@ -92,7 +92,7 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
 
 # Define health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD curl -f http://localhost:${PORT:-80} || exit 1
+    CMD curl -f http://localhost:${PORT:-3000} || exit 1
 
 # Ensure no runtime ModuleUpdate.
 ENV SKIP_REQUIREMENTS_UPDATE=true

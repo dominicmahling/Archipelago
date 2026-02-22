@@ -70,13 +70,6 @@ COPY . .
 
 COPY --from=cython-builder /build/*.so ./
 
-# --- START: PERSISTENT STORAGE ADDITION ---
-# Erstellt die Ordner für Datenbanken und generierte Seeds
-RUN mkdir -p /app/storage /app/uploads && chmod -R 777 /app/storage /app/uploads
-VOLUME /app/storage
-VOLUME /app/uploads
-# --- END: PERSISTENT STORAGE ADDITION ---
-
 # Run ModuleUpdate
 RUN python ModuleUpdate.py -y
 

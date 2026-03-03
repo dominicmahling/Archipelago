@@ -1,5 +1,6 @@
 services:
   multiworld:
+    container_name: multiworld
     # Build only once. Web service uses the same image build
     build:
       context: ..

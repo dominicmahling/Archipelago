@@ -44,7 +44,7 @@ services:
       # Bind gunicorn on 8000
       - PORT=2350
     ports:
-      - 2350:2350
+      - 127.0.0.1:2350:2350
 
 #  nginx:
 #    image: nginx:stable-alpine

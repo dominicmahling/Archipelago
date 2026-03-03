@@ -13,6 +13,7 @@ services:
     volumes:
       # Mount application volume
       - app_volume:/app
+      - /archipelago-data:/app/storage
 
       # Mount configs
       - ./example_config.yaml:/app/config.yaml
@@ -34,6 +35,7 @@ services:
     volumes:
       # Mount application volume
       - app_volume:/app
+      - /archipelago-data:/app/storage
 
       # Mount configs
       - ./example_config.yaml:/app/config.yaml

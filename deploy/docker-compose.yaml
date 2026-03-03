@@ -42,21 +42,23 @@ services:
       - ./example_gunicorn.conf.py:/app/gunicorn.conf.py
     environment:
       # Bind gunicorn on 8000
-      - PORT=8000
-
-  nginx:
-    image: nginx:stable-alpine
-    volumes:
-      # Mount application volume
-      - app_volume:/app
-
-      # Mount config
-      - ./example_nginx.conf:/etc/nginx/conf.d/default.conf:ro 
+      - PORT=2350
     ports:
-      # Nginx listening internally on port 80 -- mapped to 8080 on host
-      - 7777:80
-    depends_on:
-      - web
+      - 2350:2350
+
+#  nginx:
+#    image: nginx:stable-alpine
+#    volumes:
+#      # Mount application volume
+#      - app_volume:/app
+#
+#      # Mount config
+#      - ./example_nginx.conf:/etc/nginx/conf.d/default.conf:ro 
+#    ports:
+#      # Nginx listening internally on port 80 -- mapped to 8080 on host
+#      - 7777:80
+#    depends_on:
+#      - web
 
 volumes:
   # Share application directory amongst multiworld and web services

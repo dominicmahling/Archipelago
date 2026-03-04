@@ -21,7 +21,7 @@ services:
       - ./selflaunch.yaml:/app/selflaunch.yaml
 
     # Expose on host network for access to dynamically mapped ports
-    network_mode: host
+    #network_mode: host
 
     # No Healthcheck in place yet for multiworld
     healthcheck:

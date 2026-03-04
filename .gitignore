@@ -63,7 +63,7 @@ Output Logs/
 /data/user.kv
 /datapackage
 /datapackage_export.json
-/custom_worlds
+
 # stubgen output
 /out/
 
